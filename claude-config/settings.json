@@ -1,0 +1,72 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(gcloud:*)",
+      "Bash(bq:*)",
+      "Bash(gsutil:*)",
+      "Bash(python:*)",
+      "Bash(pytest:*)",
+      "Bash(pip:*)",
+      "Bash(az:*)",
+      "Bash(gh:*)",
+      "Bash(cat:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(ls:*)",
+      "Bash(echo:*)",
+      "Bash(jq:*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /*)",
+      "Bash(curl * | bash)",
+      "Bash(wget * | bash)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write|Create",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/post-tool-format.sh"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": ".*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/.claude/hooks/on-notification.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "mcpServers": {
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PAT}"
+      }
+    },
+    "azure-devops": {
+      "command": "npx",
+      "args": ["-y", "@tiberriver256/mcp-server-azure-devops"],
+      "env": {
+        "AZURE_DEVOPS_ORG_URL": "${AZURE_DEVOPS_ORG_URL}",
+        "AZURE_DEVOPS_AUTH_METHOD": "pat",
+        "AZURE_PERSONAL_ACCESS_TOKEN": "${AZURE_DEVOPS_PAT}"
+      }
+    }
+  },
+  "env": {
+    "GOOGLE_CLOUD_PROJECT": "${GCP_PROJECT_ID}",
+    "CLOUDSDK_CORE_PROJECT": "${GCP_PROJECT_ID}"
+  }
+}

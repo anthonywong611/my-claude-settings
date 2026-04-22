@@ -1,0 +1,15 @@
+{
+  "_doc": "Reference config for the Azure DevOps MCP server. Actual wiring is in settings.json.",
+  "server": "@tiberriver256/mcp-server-azure-devops",
+  "install": "npm install -g @tiberriver256/mcp-server-azure-devops",
+  "env_vars": {
+    "AZURE_DEVOPS_ORG_URL": "https://dev.azure.com/YOUR_ORG",
+    "AZURE_DEVOPS_AUTH_METHOD": "pat",
+    "AZURE_PERSONAL_ACCESS_TOKEN": "PAT scopes: Work Items (R/W), Build (R/Execute), Code (R)"
+  },
+  "capabilities": [
+    "get_work_item", "create_work_item", "update_work_item",
+    "list_work_items", "get_pipeline", "trigger_pipeline",
+    "get_pipeline_run", "list_pipeline_runs"
+  ]
+}

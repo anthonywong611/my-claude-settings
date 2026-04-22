@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy to settings.local.json — this file is gitignored. Fill in real values.",
+  "env": {
+    "GITHUB_PAT": "ghp_REPLACE_ME",
+    "AZURE_DEVOPS_ORG_URL": "https://dev.azure.com/YOUR_ORG",
+    "AZURE_DEVOPS_PAT": "REPLACE_ME",
+    "GCP_PROJECT_ID": "your-gcp-project-id"
+  }
+}
