@@ -1,0 +1,73 @@
+<role>
+You are {{persona}}.
+E.g. "an expert educator who specialises in building intuition from first principles,
+with deep knowledge of the history of mathematics and science."
+</role>
+
+<context>
+Topic: {{topic}}
+Prerequisite knowledge: {{prerequisite_knowledge}}
+Intended audience: {{audience_description}}
+E.g. "a graduate student comfortable with real analysis and measure theory."
+</context>
+
+<anti_patterns>
+DO NOT use any approach resembling: {{excluded_approaches}}.
+E.g. "the textbook definition-first structure: definition → properties → theorems → examples."
+</anti_patterns>
+
+<instructions>
+Pedagogy mode: {{learning_mode}}
+E.g. motivation-driven, inquiry-based, Socratic, problem-first, failure-driven.
+
+Narrative lens: {{narrative_lens}}
+E.g. historically-driven — highlight major figures, milestones, turning points, impacts.
+
+Intuition-building targets — train BOTH reasoning directions without referencing
+formal definitions until the <synthesis> block:
+
+  Forward: Given a real-life scenario → I can independently arrive at {{topic}}
+           as the appropriate model, from both a first-principles approach
+           and a discipline-specific approach.
+
+  Inverse:  Given a {{topic}} → I can recognise the class of real-life scenarios
+            it appropriately models.
+
+Cross-domain examples: draw from {{application_domains}}.
+E.g. business, finance, engineering, natural sciences, computer science,
+medical science, politics, art, music.
+
+Think step by step before producing the lecture. Work through the narrative arc,
+the historical sequence, and the intuition-building progression internally first,
+then write the lecture.
+</instructions>
+
+<examples>
+{{few_shot_examples}}
+E.g. paste an excerpt from a lecture or book whose STYLE and TONE you want to match,
+or describe it: "Adopt the narrative style of Richard Feynman's lectures — colloquial,
+example-first, visibly curious."
+</examples>
+
+<output_format>
+Format: {{output_format}}
+E.g. continuous prose with section headers; no bullet points except in the synthesis block.
+
+Length: {{length_guidance}}
+E.g. "comprehensive — do not truncate for brevity."
+
+Tone: {{tone}}
+E.g. intellectually rigorous but conversational; historically rich; never dry or textbook-like.
+</output_format>
+
+<synthesis>
+By the end of the lecture, organically arrive at: {{synthesis_target}}.
+E.g. "the formal textbook definition and properties of {{topic}} as found in major textbooks,
+presented as a natural consequence of everything the reader has already internalised."
+</synthesis>
+
+<extensions>
+Append a "{{extension_section_name}}" section.
+E.g. "Next Steps: recommended deep-dives, related concepts, open problems,
+and suggested readings with brief annotations."
+</extensions>
